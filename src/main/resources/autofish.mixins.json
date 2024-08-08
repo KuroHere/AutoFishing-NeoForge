@@ -4,11 +4,9 @@
   "package": "me.kurohere.autofish.mixin",
   "compatibilityLevel": "JAVA_21",
   "refmap": "autofish.refmap.json",
-  "mixins": [
-  ],
   "client": [
-    "MixinFishHookEntity",
-    "MixinClientPlayNetworkHandler"
+    "MixinClientPlayNetworkHandler",
+    "MixinFishHookEntity"
   ],
   "injectors": {
     "defaultRequire": 1

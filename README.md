@@ -7,5 +7,6 @@ The origin [MrTroot's Autofish mod](https://www.curseforge.com/minecraft/mc-mods
 
 Note
 ========
-This mod is unstable and very buggy, don't recommend to using this
+Default setting interface is ``,``\
+This mod is unstable and very buggy, don't recommend to using this.
 

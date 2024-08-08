@@ -37,6 +37,8 @@ public class AutoFish {
 
     public AutoFish(IEventBus bus) {
         NeoForge.EVENT_BUS.register(this);
+        AUTO_FISH_GUI_KEY = new KeyMapping("key.autofish.open_gui", InputConstants.Type.KEYSYM, GLFW.GLFW_KEY_COMMA, "Autofish");
+
         bus.addListener(FMLClientSetupEvent.class, (fmlClientSetupEvent -> {
             fmlClientSetupEvent.enqueueWork(() -> {
                 ModList.get().getModContainerById(MODID).ifPresent(modContainer -> {
@@ -44,6 +46,9 @@ public class AutoFish {
                     init();
                 });
             });
+        }));
+        bus.addListener(RegisterKeyMappingsEvent.class, (registerKeyMappingsEvent -> {
+            registerKeyMappingsEvent.register(getAutoFishGuiKey());
         }));
     }
 
@@ -61,7 +66,6 @@ public class AutoFish {
         if (instance == null) instance = this;
 
         CONFIG_MANAGER = new ConfigManager();
-        AUTO_FISH_GUI_KEY = new KeyMapping("key.autofish.open_gui", InputConstants.Type.KEYSYM, GLFW.GLFW_KEY_COMMA, "Autofish");
         SCHEDULER = new AutoFishScheduler(getInstance());
         AUTO_FISH = new AutoFishClient(getInstance());
     }
@@ -100,16 +104,6 @@ public class AutoFish {
 
     public KeyMapping getAutoFishGuiKey() {
         return AUTO_FISH_GUI_KEY;
-    }
-
-    // FR
-    @EventBusSubscriber(modid = AutoFish.MODID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
-    public static class ClientModEventSubscriber {
-
-        @SubscribeEvent
-        public static void onRegisterKeyMappings(RegisterKeyMappingsEvent event) {
-            event.register(AUTO_FISH_GUI_KEY);
-        }
     }
 }
 
