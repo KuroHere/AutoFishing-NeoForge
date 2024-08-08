@@ -8,6 +8,9 @@
   "options.autofish.enable.title": "Enable Autofish",
   "options.autofish.enable.tooltip": "Toggles the entire mod on or off.",
 
+  "options.autofish.vanilla.tooltip": "Enable Only Vanilla Fishing Rod.",
+  "options.autofish.vanilla.title": "Disable this to allow the use of Fishing Rods from other mods.",
+
   "options.autofish.multirod.title": "Enable MultiRod",
   "options.autofish.multirod.tooltip_0": "Cycles through all of the",
   "options.autofish.multirod.tooltip_1": "available rods in the hotbar,",

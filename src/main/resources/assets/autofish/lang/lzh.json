@@ -8,6 +8,9 @@
   "options.autofish.enable.title": "啓用自動釣魚",
   "options.autofish.enable.tooltip": "開關改囊機能",
 
+  "options.autofish.vanilla.tooltip": "僅啟動香草釣魚竿。",
+  "options.autofish.vanilla.title": "如果您希望能夠在不同的模式下使用魚竿，請禁用此選項。",
+
   "options.autofish.multirod.title": "啟用多竿",
   "options.autofish.multirod.tooltip_0": "輪流遍歷其諸",
   "options.autofish.multirod.tooltip_1": "捷槽中所有可用之竿",

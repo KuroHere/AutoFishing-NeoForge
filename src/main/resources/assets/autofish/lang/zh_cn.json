@@ -8,6 +8,9 @@
   "options.autofish.enable.title": "启用自动钓鱼",
   "options.autofish.enable.tooltip": "打开或关闭MOD功能",
 
+  "options.autofish.vanilla.tooltip": "只得到一根香草钓鱼竿。",
+  "options.autofish.vanilla.title": "如果您希望能够以不同的模式使用鱼竿，请禁用此选项。",
+
   "options.autofish.multirod.title": "启用多个钓鱼竿",
   "options.autofish.multirod.tooltip_0": "顺序使用多个钓鱼竿",
   "options.autofish.multirod.tooltip_1": "在当前钓鱼竿损坏时",

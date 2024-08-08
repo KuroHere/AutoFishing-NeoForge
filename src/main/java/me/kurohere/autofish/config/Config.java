@@ -3,8 +3,8 @@ package me.kurohere.autofish.config;
 import com.google.gson.annotations.Expose;
 
 public class Config {
-    @Expose
-    boolean isAutofishEnabled = true;
+    @Expose boolean isAutofishEnabled = true;
+    @Expose boolean useOnlyFishingRod = true;
     @Expose boolean multiRod = false;
     @Expose boolean isOpenWaterDetectEnabled = true;
     @Expose boolean noBreak = false;
@@ -16,6 +16,9 @@ public class Config {
     @Expose long reelInDelay = 1;
     @Expose String clearLagRegex = "\\[ClearLag\\] Removed [0-9]+ Entities!";
 
+    public boolean isUseOnlyFishingRod() {
+        return useOnlyFishingRod;
+    }
     public boolean isAutofishEnabled() {
         return isAutofishEnabled;
     }
@@ -56,6 +59,9 @@ public class Config {
     }
 
     public void setAutofishEnabled(boolean autofishEnabled) { isAutofishEnabled = autofishEnabled; }
+    public void setUseOnlyFishingRod(boolean useOnlyFishingRod) {
+        this.useOnlyFishingRod = useOnlyFishingRod;
+    }
 
     public void setMultiRod(boolean multiRod) {
         this.multiRod = multiRod;

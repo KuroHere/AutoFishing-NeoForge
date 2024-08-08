@@ -8,6 +8,9 @@
   "options.autofish.enable.title": "자동낚시 활성화",
   "options.autofish.enable.tooltip": "자동낚시 모드를 켜거나 끕니다.",
 
+  "options.autofish.vanilla.tooltip": "바닐라 낚싯대만 활성화합니다.",
+  "options.autofish.vanilla.title": "다른 모드의 낚싯대를 사용할 수 있도록 하려면 이 옵션을 비활성화합니다.",
+
   "options.autofish.multirod.title": "여러 낚시대 사용 활성화",
   "options.autofish.multirod.tooltip_0": "기존에 사용하던 낚시대가 파괴되면,",
   "options.autofish.multirod.tooltip_1": "핫바에 있는 다른 낚시대를 대신하여",

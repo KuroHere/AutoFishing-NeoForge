@@ -8,6 +8,9 @@
   "options.autofish.enable.title": "Включить рыбалку",
   "options.autofish.enable.tooltip": "Переключает весь мод включенным или выключенным.",
 
+  "options.autofish.vanilla.tooltip": "Заводите только ванильную удочку.",
+  "options.autofish.vanilla.title": "Если вы хотите иметь возможность использовать удилище в другом режиме, отключите эту опцию.",
+
   "options.autofish.multirod.title": "Включить MultiRod",
   "options.autofish.multirod.tooltip_0": "Переключается между всеми",
   "options.autofish.multirod.tooltip_1": "доступными удочками на панели быстрого доступа,",

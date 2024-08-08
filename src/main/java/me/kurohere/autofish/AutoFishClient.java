@@ -48,7 +48,7 @@ public class AutoFishClient implements ILocal {
         if (mc.player == null || mc.level == null) return;
         autoFish.getScheduler().scheduleRepeatingAction(10000, () -> {
             if (!autoFish.getConfig().isPersistentMode()) return;
-            //if (!isHoldingFishingRod()) return;
+            if (!isHoldingFishingRod()) return;
             if (hookExists) return;
             if (autoFish.getScheduler().isRecastQueued()) return;
 
@@ -60,7 +60,7 @@ public class AutoFishClient implements ILocal {
         if (mc.level != null && mc.player != null && autoFish.getConfig().isAutofishEnabled()) {
             timeMillis = Util.getMillis(); //update current working time for this tick
 
-            //if (isHoldingFishingRod()) {
+            if (isHoldingFishingRod()) {
             if (mc.player.fishing != null) {
                 hookExists = true;
                 //MP catch listener
@@ -70,9 +70,9 @@ public class AutoFishClient implements ILocal {
             } else {
                 removeHook();
             }
-            //} else { //not holding fishing rod
-            //    removeHook();
-            //}
+            } else { //not holding fishing rod
+                removeHook();
+            }
         }
     }
 
@@ -114,7 +114,7 @@ public class AutoFishClient implements ILocal {
     public void handleChat(ClientboundSystemChatPacket packet) {
         if (autoFish.getConfig().isAutofishEnabled()) {
             if (!mc.isLocalServer()) {
-                //if (isHoldingFishingRod()) {
+                if (isHoldingFishingRod()) {
                 //check that either the hook exists, or it was just removed
                 //this prevents false casts if we are holding a rod but not fishing
                 if (hookExists || (timeMillis - hookRemovedAt < 2000)) {
@@ -127,7 +127,7 @@ public class AutoFishClient implements ILocal {
                         queueRecast();
                     }
                 }
-                //}
+                }
             }
         }
     }
@@ -152,7 +152,7 @@ public class AutoFishClient implements ILocal {
                                                getRandomDelay() + autoFish.getConfig().getReelInDelay(), () -> {
                     //State checks to ensure we can still fish once this runs
                     if(hookExists) return;
-                    //if(!isHoldingFishingRod()) return;
+                    if(!isHoldingFishingRod()) return;
                     if(autoFish.getConfig().isNoBreak() && Objects.requireNonNull(getHeldItem()).getDamageValue() >= 63) return;
 
                     useRod();
@@ -221,7 +221,10 @@ public class AutoFishClient implements ILocal {
      * @Reason: To work seamlessly with any fishing rod from other mods, without the need for APIs or reflection.
      **/
     public boolean isHoldingFishingRod() {
-        return isItemFishingRod(Objects.requireNonNull(getHeldItem()).getItem());
+        if (autoFish.getConfig().isUseOnlyFishingRod()) {
+            return isItemFishingRod(Objects.requireNonNull(getHeldItem()).getItem());
+        }
+        return true; // Always return true if the flag is disabled, ignoring the item type.
     }
 
     private InteractionHand getCorrectHand() {

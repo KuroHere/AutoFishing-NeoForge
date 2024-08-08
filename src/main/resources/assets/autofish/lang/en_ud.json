@@ -8,6 +8,9 @@
   "options.autofish.enable.title": "ɥsᴉɟoʇn∀ ǝlqɐuƎ",
   "options.autofish.enable.tooltip": "˙ɟɟo ɹo uo poɯ ǝɹᴉʇuǝ ǝɥʇ sǝlƃƃo⟘",
 
+  "options.autofish.vanilla.tooltip": "Enable Only Vanilla Fishing Rod.",
+  "options.autofish.vanilla.title": "Disable this to allow the use of Fishing Rods from other mods.",
+
   "options.autofish.multirod.title": "poᴚᴉʇlnW ǝlqɐuƎ",
   "options.autofish.multirod.tooltip_0": "˙ʞɐǝɹq ʎǝɥʇ sɐ ʇxǝu ǝɥʇ oʇ ƃuᴉʌoɯ",
   "options.autofish.multirod.tooltip_1": "'ɹɐqʇoɥ ǝɥʇ uᴉ spoɹ ǝlqɐlᴉɐʌɐ",

@@ -46,6 +46,15 @@ public class AutoFishConfigScreen {
                 .setYesNoTextSupplier(yesNoTextSupplier)
                 .build();
 
+        AbstractConfigListEntry toggleVanillaFishingRod = entryBuilder.startBooleanToggle(Component.translatable("options.autofish.vallina.title"), config.isUseOnlyFishingRod())
+                .setDefaultValue(defaults.isUseOnlyFishingRod())
+                .setTooltip(Component.translatable("options.autofish.vallina.tooltip"))
+                .setSaveConsumer(newValue -> {
+                    modAutofish.getConfig().setUseOnlyFishingRod(newValue);
+                })
+                .setYesNoTextSupplier(yesNoTextSupplier)
+                .build();
+
         //Enable MultiRod
         AbstractConfigListEntry toggleMultiRod = entryBuilder.startBooleanToggle(Component.translatable("options.autofish.multirod.title"), config.isMultiRod())
                 .setDefaultValue(defaults.isMultiRod())
@@ -191,9 +200,9 @@ public class AutoFishConfigScreen {
                 })
                 .build();
 
-
         SubCategoryBuilder subCatBuilderBasic = entryBuilder.startSubCategory(Component.translatable("options.autofish.basic.title"));
         subCatBuilderBasic.add(toggleAutofish);
+        subCatBuilderBasic.add(toggleVanillaFishingRod);
         subCatBuilderBasic.add(toggleMultiRod);
         subCatBuilderBasic.add(toggleOpenWaterDetection);
         subCatBuilderBasic.add(toggleBreakProtection);
