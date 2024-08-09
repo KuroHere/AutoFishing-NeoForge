@@ -7,6 +7,8 @@ The origin [MrTroot's Autofish mod](https://www.curseforge.com/minecraft/mc-mods
 
 Note
 ========
+![AutoFish Setting](https://i.imgur.com/f7tcd8x.png)
+
 Default setting interface is ``,``\
 This mod a bit unstable report if u found it.
 
